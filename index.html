@@ -109,19 +109,14 @@ h4 {
       const styleOptions = {
         // Hide upload button.
         hideUploadButton: true,
-
         //  Color and paddings
-
         accent: '#0063B1',
         backgroundColor: 'White',
         cardEmphasisBackgroundColor: '#F0F0F0',
         paddingRegular: 10,
         paddingWide: 10 * 2,
         subtle: '#767676',
-
         // Avatar
-
-
         avatarSize: 40,
         botAvatarBackgroundColor: 'white', // defaults to accent color
         botAvatarImage: 'https://hgs.cx//wp-content/uploads/2021/11/HGS-Logomark_Blue.svg',
@@ -129,10 +124,8 @@ h4 {
         // userAvatarBackgroundColor: 'white', // defaults to accent color
         userAvatarImage: 'https://github.com/NischalRam/3B12/blob/main/dump/user-xxl.png?raw=true',
         userAvatarInitials: '',
-
         // Bubble
         // The default configuration for the bubbles, which is used to render chat messages (NOTE: The bubble* are used for bot messages and the bubbleFromUser* are used for rendering user messages):
-
         bubbleBackground: 'White',
         bubbleBorderColor: '#E6E6E6',
         bubbleBorderRadius: 2,
@@ -153,42 +146,28 @@ h4 {
         bubbleNubOffset: 'bottom',
         bubbleNubSize: 0,
         bubbleTextColor: 'Black',
-
-
         // Suggested actions
         // Defaults for suggested action styling:
-
-
         suggestedActionBackground: 'White',
-
         suggestedActionBorderColor: undefined, // defaults to accent
         // suggestedActionBorderStyle: 'bold',
         suggestedActionBorderWidth: 1,
         suggestedActionBorderRadius: 10,
-
         suggestedActionImageHeight: 20,
         suggestedActionTextColor: null,
-
         suggestedActionDisabledBackground: undefined, // defaults to suggestedActionBackground
         suggestedActionDisabledBorder: null,
         suggestedActionDisabledBorderColor: '#E6E6E6',
         suggestedActionDisabledBorderStyle: 'solid',
         suggestedActionDisabledBorderWidth: 2,
         suggestedActionDisabledTextColor: undefined, // defaults to subtle
-
         suggestedActionHeight: 30,
         suggestedActionLayout: 'flow',
-
         suggestedActionsCarouselFlipperCursor: 'pointer',
-
         // Root
         // The default styling for the root properties:
-
         rootHeight: '100%',
         rootWidth: '100%',
-
-
-
       };
 
       // Specifies the token endpoint URL.
@@ -248,8 +227,11 @@ h4 {
                 localTimezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
                 locale,
                 name: 'startConversation',
-                type: 'event'
-              })
+                type: 'event',
+                value: {
+                  chat_token: token.trim(),
+                  regional_direct_line: directLineURL.trim()
+                }})
               .subscribe();
 
             // Only send the event once, unsubscribe after the event is sent.
